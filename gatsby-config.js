@@ -6,6 +6,16 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sass`,
+    {
+      resolve: "gatsby-source-shopify",
+      options: {
+        shopName: "YOUR_SHOPNAME",
+        accessToken: "YOUR_TOKEN",
+        verbose: true,
+        paginationSize: 30,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
