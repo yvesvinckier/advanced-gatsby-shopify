@@ -8,7 +8,7 @@ import logo from "../images/logo.svg"
 
 const Header = ({ siteTitle }) => {
   const { isCartOpen, addProductToCart, client } = useContext(StoreContext)
-  debugger
+
   return (
     <header
       className="navbar"
