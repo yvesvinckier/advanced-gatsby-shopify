@@ -11,6 +11,7 @@ const defaultValues = {
     toggleCartOpen: () => { },
     cart: [],
     addProductToCart: () => { },
+    removeProductFromCart: () => { },
     client,
     checkout: {
         lineItems: [],
@@ -80,6 +81,17 @@ export const StoreProvider = ({ children }) => {
         }
     }
 
+    const removeProductFromCart = async lineItemId => {
+        try {
+            const newCheckout = await client.checkout.removeLineItems(checkout.id, [
+                lineItemId,
+            ])
+            setCheckout(newCheckout)
+        } catch (e) {
+            console.error(e)
+        }
+    }
+
     return (
         <StoreContext.Provider
             value={{
@@ -88,6 +100,7 @@ export const StoreProvider = ({ children }) => {
                 addProductToCart,
                 toggleCartOpen,
                 isCartOpen,
+                removeProductFromCart,
             }}
         >
             {children}

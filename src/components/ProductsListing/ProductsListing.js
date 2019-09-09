@@ -35,23 +35,23 @@ const PRODUCTS_LISTING_QUERY = graphql`
 `
 
 const ProductsListing = () => {
-    return (
-        <div>
-            <h2 className="title">Level Up Products</h2>
-            <StaticQuery
-                query={PRODUCTS_LISTING_QUERY}
-                render={({ products }) => {
-                    return (
-                        <div className="columns is-multiline">
-                            {products.edges.map(({ node: product }) => (
-                                <ProductsListingItem key={product.id} product={product} />
-                            ))}
-                        </div>
-                    )
-                }}
-            />
-        </div>
-    )
+  return (
+    <div>
+      <h2 className="title">Level Up Products</h2>
+      <StaticQuery
+        query={PRODUCTS_LISTING_QUERY}
+        render={({ products }) => {
+          return (
+            <div className="columns is-multiline">
+              {products.edges.map(({ node: product }) => (
+                <ProductsListingItem key={product.id} product={product} />
+              ))}
+            </div>
+          )
+        }}
+      />
+    </div>
+  )
 }
 
 export default ProductsListing
