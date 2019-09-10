@@ -9,7 +9,6 @@ const Cart = ({ style }) => {
         toggleCartOpen,
         removeProductFromCart,
     } = useContext(StoreContext)
-
     return (
         <animated.div
             style={{
@@ -38,33 +37,52 @@ const Cart = ({ style }) => {
                 Close Cart
       </button>
             <h3 className="title">Cart</h3>
-            {checkout.lineItems.map(item => (
-                <div key={item.id} style={{ display: "flex", marginBottom: "2rem" }}>
-                    <div
-                        style={{
-                            width: 60,
-                            height: 60,
-                            overflow: "hidden",
-                            marginRight: 10,
-                        }}
-                    >
-                        <img src={item.variant.image.src} alt="" />
-                    </div>
-                    <div>
-                        <h4 className="title is-4">{item.title}</h4>
-                        <p className="subtitle is-5">${item.variant.price}</p>
-                        <p className="subtitle is-5">Qty: {item.quantity}</p>
-                        <button
-                            onClick={() => removeProductFromCart(item.id)}
-                            className="is-small button is-danger is-outlined"
+            {checkout.lineItems.length > 0 ? (
+                <>
+                    {checkout.lineItems.map(item => (
+                        <div
+                            key={item.id}
+                            style={{ display: "flex", marginBottom: "2rem" }}
                         >
-                            Remove
-            </button>
+                            <div
+                                style={{
+                                    width: 60,
+                                    height: 60,
+                                    overflow: "hidden",
+                                    marginRight: 10,
+                                }}
+                            >
+                                <img src={item.variant.image.src} alt="" />
+                            </div>
+                            <div>
+                                <h4 className="title is-4">{item.title}</h4>
+                                <p className="subtitle is-5">${item.variant.price}</p>
+                                <p className="subtitle is-5">Qty: {item.quantity}</p>
+                                <button
+                                    onClick={() => removeProductFromCart(item.id)}
+                                    className="is-small button is-danger is-outlined"
+                                >
+                                    Remove
+                </button>
+                            </div>
+                        </div>
+                    ))}
+                    <hr />
+                    <div>
+                        Total: <h5 className="title">${checkout.totalPrice}</h5>
                     </div>
-                </div>
-            ))}
-            <hr />
-            Total: <h5 className="title">${checkout.totalPrice}</h5>
+                    <div style={{ marginTop: "2rem" }}>
+                        <a
+                            href={checkout.webUrl}
+                            className="button is-fullwidth is-success"
+                        >
+                            Checkout Now
+            </a>
+                    </div>
+                </>
+            ) : (
+                    <p>No items in cart</p>
+                )}
         </animated.div>
     )
 }
