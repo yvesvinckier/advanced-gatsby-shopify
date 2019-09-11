@@ -53,7 +53,7 @@ const Header = ({ siteTitle }) => {
                   textAlign: "center",
                   height: 30,
                   top: -5,
-                  left: -5,
+                  right: -5,
                   width: 30,
                   lineHeight: "30px",
                 }}
