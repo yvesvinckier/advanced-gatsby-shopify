@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { createContext, useState, useEffect } from "react"
 import Client from 'shopify-buy'
 
@@ -30,7 +31,6 @@ export const StoreProvider = ({ children }) => {
     const [isLoading, setLoading] = useState(false)
 
     const toggleCartOpen = () => setCartOpen(!isCartOpen)
-
     useEffect(() => {
         initializeCheckout()
     }, [])

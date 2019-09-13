@@ -10,7 +10,7 @@ import Cart from "./Cart/Cart"
 import Loader from "./Loader"
 
 const Header = ({ siteTitle }) => {
-  const { isCartOpen, toggleCartOpen, checkout, isLoading } = useContext(
+  const { isCartOpen, toggleCartOpen, checkout } = useContext(
     StoreContext
   )
   const transitions = useTransition(isCartOpen, null, {
@@ -25,10 +25,14 @@ const Header = ({ siteTitle }) => {
     <>
       <header
         className="level is-mobile"
-        style={{ background: "var(--purp)", boxShadow: "var(--elevation-2)" }}
+        style={{
+          padding: "10px 5%",
+          background: "var(--purp)",
+          boxShadow: "var(--elevation-2)",
+        }}
       >
         <div className="level-left">
-          <Link to="/" className="navbar-item">
+          <Link to="/">
             <img
               style={{ height: 60, maxHeight: "none", marginBottom: 0 }}
               src={logo}
