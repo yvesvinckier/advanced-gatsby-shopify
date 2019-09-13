@@ -8,6 +8,7 @@ import { StoreContext } from "../context/StoreContext"
 import logo from "../images/logo.svg"
 import Cart from "./Cart/Cart"
 import Loader from "./Loader"
+import Nav from "./Nav"
 
 const Header = ({ siteTitle }) => {
   const { isCartOpen, toggleCartOpen, checkout } = useContext(
@@ -39,6 +40,7 @@ const Header = ({ siteTitle }) => {
               alt="Level Up Logo"
             />
           </Link>
+          <Nav />
         </div>
         <div className="level-right">
           <div className="navbar-item">

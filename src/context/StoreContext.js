@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React, { createContext, useState, useEffect } from "react"
-import Client from 'shopify-buy'
+import Client from "shopify-buy"
 
 const client = Client.buildClient({
     domain: "advanced-gatsby-blowup.myshopify.com",
@@ -31,6 +31,7 @@ export const StoreProvider = ({ children }) => {
     const [isLoading, setLoading] = useState(false)
 
     const toggleCartOpen = () => setCartOpen(!isCartOpen)
+
     useEffect(() => {
         initializeCheckout()
     }, [])
