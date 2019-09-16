@@ -4,7 +4,7 @@ import ProductsListingItem from "./ProductsListingItem"
 
 const PRODUCTS_LISTING_QUERY = graphql`
   query ProductsListingQuery {
-    products: allShopifyProduct(sort: { fields: publishedAt, order: ASC }) {
+    products: allShopifyProduct(filter: {title: {ne: "Beoplay E8 2.0"}} sort: { fields: publishedAt, order: ASC }) {
       edges {
         node {
           title
