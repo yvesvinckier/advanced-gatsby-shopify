@@ -1,23 +1,22 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import ProductsListingItem from "../components/ProductsListing/ProductsListingItem"
+import React from 'react'
+import { graphql } from 'gatsby'
+import ProductsListingItem from '../components/ProductsListing/ProductsListingItem'
 
 const ProductCategoriesTemplate = ({ data }) => {
-    const { shopifyCollection } = data
+  const { shopifyCollection } = data
 
-    return (
-        <Layout>
-            <div>
-                <h2 className="title">{shopifyCollection.title}</h2>
-                <div className="columns is-multiline">
-                    {shopifyCollection.products.map(product => (
-                        <ProductsListingItem key={product.id} product={product} />
-                    ))}
-                </div>
-            </div>
-        </Layout>
-    )
+  return (
+    <>
+      <div>
+        <h2 className="title">{shopifyCollection.title}</h2>
+        <div className="columns is-multiline">
+          {shopifyCollection.products.map(product => (
+            <ProductsListingItem key={product.id} product={product} />
+          ))}
+        </div>
+      </div>
+    </>
+  )
 }
 
 export default ProductCategoriesTemplate

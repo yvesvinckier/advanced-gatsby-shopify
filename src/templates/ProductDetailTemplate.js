@@ -1,8 +1,7 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Image from "gatsby-image"
-import Layout from "../components/layout"
-import AddToCart from "../components/Cart/AddToCart"
+import React from 'react'
+import { graphql } from 'gatsby'
+import Image from 'gatsby-image'
+import AddToCart from '../components/Cart/AddToCart'
 
 const ProductDetailTemplate = ({ data }) => {
   const { shopifyProduct: product } = data
@@ -11,7 +10,7 @@ const ProductDetailTemplate = ({ data }) => {
     variants: [firstVariant],
   } = product
   return (
-    <Layout>
+    <>
       <div className="columns">
         <div className="column">
           <Image fluid={firstImage.localFile.childImageSharp.fluid} />
@@ -23,7 +22,7 @@ const ProductDetailTemplate = ({ data }) => {
           <AddToCart variantId={firstVariant.shopifyId} />
         </div>
       </div>
-    </Layout>
+    </>
   )
 }
 

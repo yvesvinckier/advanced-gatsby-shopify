@@ -8,10 +8,12 @@
 
 import React from 'react'
 import { StoreProvider } from './src/context/StoreContext'
+import Layout from './src/components/layout'
+
+export const wrapPageElement = ({ element, props }) => {
+  return <Layout {...props}>{element}</Layout>
+}
 
 export const wrapRootElement = ({ element }) => (
-    <StoreProvider>
-        {element}
-    </StoreProvider>
-
+  <StoreProvider>{element}</StoreProvider>
 )

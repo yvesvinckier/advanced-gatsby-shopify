@@ -1,5 +1,5 @@
-import React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import React from 'react'
+import { useStaticQuery, graphql, Link } from 'gatsby'
 
 const Nav = () => {
   const { allShopifyCollection } = useStaticQuery(
@@ -22,7 +22,8 @@ const Nav = () => {
       {allShopifyCollection.edges.map(edge => {
         return (
           <Link
-            style={{ color: "#FFF", marginLeft: 40 }}
+            style={{ color: '#FFF', marginLeft: 40 }}
+            key={edge.node.handle}
             to={`/${edge.node.handle}`}
           >
             {edge.node.title}

@@ -1,10 +1,13 @@
-import React from "react"
-import { graphql, StaticQuery } from "gatsby"
-import ProductsListingItem from "./ProductsListingItem"
+import React from 'react'
+import { graphql, StaticQuery } from 'gatsby'
+import ProductsListingItem from './ProductsListingItem'
 
 const PRODUCTS_LISTING_QUERY = graphql`
   query ProductsListingQuery {
-    products: allShopifyProduct(filter: {title: {ne: "Beoplay E8 2.0"}} sort: { fields: publishedAt, order: ASC }) {
+    products: allShopifyProduct(
+      filter: { title: { ne: "Beoplay E8 2.0" } }
+      sort: { fields: publishedAt, order: ASC }
+    ) {
       edges {
         node {
           title

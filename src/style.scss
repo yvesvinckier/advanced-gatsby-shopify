@@ -63,8 +63,8 @@
   --heading-seven: var(--smallestFontSize);
 
   /* Fonts */
-  --headingFont: "Poppins", sans-serif;
-  --bodyFont: "Raleway", sans-serif;
+  --headingFont: 'Poppins', sans-serif;
+  --bodyFont: 'Raleway', sans-serif;
 
   /* Z-Index */
   --headerLevel: 10;
@@ -83,4 +83,4 @@
   --margin: 2.75rem 0 1rem;
 }
 
-@import "~bulma/bulma.sass";
+@import '~bulma/bulma.sass';

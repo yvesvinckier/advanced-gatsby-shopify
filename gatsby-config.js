@@ -6,12 +6,13 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sass`,
+    `gatsby-plugin-styled-components`,
+    // `gatsby-plugin-sass`,
     {
-      resolve: "gatsby-source-shopify",
+      resolve: 'gatsby-source-shopify',
       options: {
-        shopName: "advanced-gatsby-blowup",
-        accessToken: "3c3a9ad7c0d62b77fabe8ff90e18f816",
+        shopName: 'advanced-gatsby-blowup',
+        accessToken: '3c3a9ad7c0d62b77fabe8ff90e18f816',
         verbose: true,
         paginationSize: 30,
       },
